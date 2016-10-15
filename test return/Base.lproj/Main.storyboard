@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="test_return" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Kh4-f0-1uc"/>
+                        <viewControllerLayoutGuide type="bottom" id="1Pn-Lv-Hs9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5mj-C9-PDW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mcn-4r-k72" customClass="MBCircularProgressBarView">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="貯金管理" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYI-OF-IP9">
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mcn-4r-k72" firstAttribute="leading" secondItem="5mj-C9-PDW" secondAttribute="leadingMargin" id="3ia-5K-F8G"/>
+                            <constraint firstItem="qYI-OF-IP9" firstAttribute="leading" secondItem="5mj-C9-PDW" secondAttribute="leadingMargin" constant="32" id="A6Y-BQ-3Ug"/>
+                            <constraint firstItem="qYI-OF-IP9" firstAttribute="top" secondItem="5mj-C9-PDW" secondAttribute="top" id="HCu-t2-zHV"/>
+                            <constraint firstAttribute="trailing" secondItem="mcn-4r-k72" secondAttribute="trailing" constant="161" id="clI-rd-Qgs"/>
+                            <constraint firstItem="qYI-OF-IP9" firstAttribute="centerX" secondItem="5mj-C9-PDW" secondAttribute="centerX" id="dgK-tI-e5g"/>
+                            <constraint firstItem="mcn-4r-k72" firstAttribute="top" secondItem="Kh4-f0-1uc" secondAttribute="bottom" constant="8" symbolic="YES" id="lK8-3o-vV5"/>
+                            <constraint firstItem="1Pn-Lv-Hs9" firstAttribute="top" secondItem="qYI-OF-IP9" secondAttribute="bottom" constant="499" id="mTi-Up-fhm"/>
+                            <constraint firstItem="1Pn-Lv-Hs9" firstAttribute="top" secondItem="mcn-4r-k72" secondAttribute="bottom" constant="339" id="tAD-iF-oTF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="progressBarView" destination="mcn-4r-k72" id="pyq-BO-mzR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="543.75" y="383.45070422535213"/>
+        </scene>
+    </scenes>
+</document>
