@@ -8,8 +8,7 @@ import UIKit
 import MBCircularProgressBar
 
 class ViewController: UIViewController {
-    
-    @IBOutlet weak var progressBarView: MBCircularProgressBarView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
