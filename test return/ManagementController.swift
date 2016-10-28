@@ -9,9 +9,14 @@
 import UIKit
 import MBCircularProgressBar
 class ManagementController: UIViewController {
+    var price: Saving!
 
+    @IBOutlet weak var Money: UILabel!
+    @IBOutlet weak var Circuler: MBCircularProgressBarView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        Money.text = String(price.money! - price.minute)
+        Circuler.value = CGFloat(price.minute * 100 / price.money!)
 
         // Do any additional setup after loading the view.
     }
@@ -20,16 +25,9 @@ class ManagementController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func prepare(for segue:UIStoryboardSegue,sender: Any?){
+        let viewController: CalcViewController = segue.destination as! CalcViewController
+            viewController.price = price
     }
-    */
-
+    
 }

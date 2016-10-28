@@ -1,16 +1,17 @@
 //
-//  SetController.swift
+//  CalcViewController.swift
 //  test return
 //
-//  Created by 二瀬征子 on 2016/10/26.
+//  Created by 二瀬征子 on 2016/10/28.
 //  Copyright © 2016年 二瀬征子. All rights reserved.
 //
 
 import UIKit
 
-class SetController: UIViewController {
-
+class CalcViewController: UIViewController {
     @IBOutlet weak var priceField: UITextField!
+    var price :Saving!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,15 +24,6 @@ class SetController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     @IBAction func tap7Button(_ sender: AnyObject) {
         let value = priceField.text! + "7"
         if let price = Int(value){
@@ -108,25 +100,19 @@ class SetController: UIViewController {
         if let price = Int(value){
             priceField.text = "\(price)"
         }
-
+        
     }
     
     @IBAction func tapClearButton(_ sender: AnyObject) {
         priceField.text! = "0"
     }
-
+    
     
     override func prepare(for segue:UIStoryboardSegue,sender: Any?){
-            let viewController: ManagementController = segue.destination as! ManagementController
+        let viewController: ManagementController = segue.destination as! ManagementController
         if let kin = Int(priceField.text!){
-            var price = Saving(kane: kin)
-            viewController.price = price
+            price.minute = price.minute + kin
+           viewController.price = price
         }
     }
 }
-
-    
-
-    
-        
-

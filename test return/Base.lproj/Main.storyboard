@@ -26,7 +26,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="貯金額の入力" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvS-Br-pjK">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="目標額の入力" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvS-Br-pjK">
                                 <frame key="frameInset" minX="15" minY="25" width="289" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -126,7 +126,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="貯金開始"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" id="lRP-dT-qoW"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="toManagement" id="lRP-dT-qoW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RbP-v5-LEy">
@@ -165,53 +165,212 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mcn-4r-k72" customClass="MBCircularProgressBarView">
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="value">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="貯金管理" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYI-OF-IP9">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="KdH-cd-3fS"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1AY-BT-f3M">
-                                <frame key="frameInset" minX="190" minY="114" width="114" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1AY-BT-f3M">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="152" id="HHv-zb-Yps"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="¥" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oli-gO-DpQ">
-                                <frame key="frameInset" minX="162" minY="114" width="20" height="29"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VFC-LG-ll1" customClass="MBCircularProgressBarView">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZEo-3g-e0O">
+                                <frame key="frameInset" minX="125" minY="444" width="71" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="貯金"/>
+                                <connections>
+                                    <segue destination="yfm-pH-SMW" kind="presentation" id="wvH-bI-52u"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="残高" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5XP-IC-F8y">
+                                <frame key="frameInset" minX="55" minY="97" width="46" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="mcn-4r-k72" firstAttribute="leading" secondItem="5mj-C9-PDW" secondAttribute="leadingMargin" id="3ia-5K-F8G"/>
-                            <constraint firstItem="qYI-OF-IP9" firstAttribute="leading" secondItem="5mj-C9-PDW" secondAttribute="leadingMargin" constant="32" id="A6Y-BQ-3Ug"/>
-                            <constraint firstItem="qYI-OF-IP9" firstAttribute="top" secondItem="5mj-C9-PDW" secondAttribute="top" id="HCu-t2-zHV"/>
-                            <constraint firstAttribute="trailing" secondItem="mcn-4r-k72" secondAttribute="trailing" constant="161" id="clI-rd-Qgs"/>
-                            <constraint firstItem="qYI-OF-IP9" firstAttribute="centerX" secondItem="5mj-C9-PDW" secondAttribute="centerX" id="dgK-tI-e5g"/>
-                            <constraint firstItem="mcn-4r-k72" firstAttribute="top" secondItem="Kh4-f0-1uc" secondAttribute="bottom" constant="8" symbolic="YES" id="lK8-3o-vV5"/>
-                            <constraint firstItem="1Pn-Lv-Hs9" firstAttribute="top" secondItem="qYI-OF-IP9" secondAttribute="bottom" constant="499" id="mTi-Up-fhm"/>
-                            <constraint firstItem="1Pn-Lv-Hs9" firstAttribute="top" secondItem="mcn-4r-k72" secondAttribute="bottom" constant="339" id="tAD-iF-oTF"/>
+                            <constraint firstItem="VFC-LG-ll1" firstAttribute="centerX" secondItem="5mj-C9-PDW" secondAttribute="centerX" id="9ae-rB-gOI"/>
+                            <constraint firstItem="VFC-LG-ll1" firstAttribute="top" secondItem="5mj-C9-PDW" secondAttribute="top" constant="151" id="Jhy-X2-kuy"/>
+                            <constraint firstItem="VFC-LG-ll1" firstAttribute="leading" secondItem="5mj-C9-PDW" secondAttribute="leadingMargin" constant="7" id="OHk-rl-GIj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1AY-BT-f3M" secondAttribute="trailing" constant="43" id="ZCp-7c-LKA"/>
+                            <constraint firstItem="qYI-OF-IP9" firstAttribute="top" secondItem="Kh4-f0-1uc" secondAttribute="bottom" constant="27" id="coW-Kn-5D6"/>
+                            <constraint firstItem="VFC-LG-ll1" firstAttribute="top" secondItem="1AY-BT-f3M" secondAttribute="bottom" constant="8" symbolic="YES" id="n7g-Kq-78Y"/>
+                            <constraint firstItem="qYI-OF-IP9" firstAttribute="leading" secondItem="5mj-C9-PDW" secondAttribute="leadingMargin" constant="86" id="phy-9e-6dl"/>
+                            <constraint firstItem="1AY-BT-f3M" firstAttribute="top" secondItem="qYI-OF-IP9" secondAttribute="bottom" constant="8" symbolic="YES" id="xCB-tV-mDh"/>
+                            <constraint firstItem="1Pn-Lv-Hs9" firstAttribute="top" secondItem="VFC-LG-ll1" secondAttribute="bottom" constant="132" id="zcR-TH-mP6"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="progressBarView" destination="mcn-4r-k72" id="pyq-BO-mzR"/>
+                        <outlet property="Circuler" destination="VFC-LG-ll1" id="d8y-jw-fj3"/>
+                        <outlet property="Money" destination="1AY-BT-f3M" id="4oc-wC-Otd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="609.375" y="382.3943661971831"/>
         </scene>
+        <!--Calc View Controller-->
+        <scene sceneID="9p9-aA-Nr5">
+            <objects>
+                <viewController id="yfm-pH-SMW" customClass="CalcViewController" customModule="test_return" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MOa-z6-mTv"/>
+                        <viewControllerLayoutGuide type="bottom" id="yDd-bL-yHb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9eD-jo-Qte">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U9a-IK-TVm">
+                                <frame key="frameInset" minX="15" minY="55" width="290" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="貯金額の入力" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYn-aI-0it">
+                                <frame key="frameInset" minX="15" minY="25" width="289" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6c-pt-Waq">
+                                <frame key="frameInset" minX="110" minY="110" width="100" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="8"/>
+                                <connections>
+                                    <action selector="tap8Button:" destination="yfm-pH-SMW" eventType="touchUpInside" id="urM-tr-8Cq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qCb-jl-9bh">
+                                <frame key="frameInset" minX="210" minY="110" width="100" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="9"/>
+                                <connections>
+                                    <action selector="tap9Button:" destination="yfm-pH-SMW" eventType="touchUpInside" id="Sis-G2-uvZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kxD-0K-LRy">
+                                <frame key="frameInset" minX="10" minY="170" width="100" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="4"/>
+                                <connections>
+                                    <action selector="tap4Button:" destination="yfm-pH-SMW" eventType="touchUpInside" id="Jy2-Gg-I3v"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wsE-TK-ZCK">
+                                <frame key="frameInset" minX="110" minY="170" width="100" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="5"/>
+                                <connections>
+                                    <action selector="tap5Button:" destination="yfm-pH-SMW" eventType="touchUpInside" id="Q5T-dE-lrc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9R-AS-QOr">
+                                <frame key="frameInset" minX="210" minY="170" width="100" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="6"/>
+                                <connections>
+                                    <action selector="tap6Button:" destination="yfm-pH-SMW" eventType="touchUpInside" id="Hac-H9-vUq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zgd-sh-s6O">
+                                <frame key="frameInset" minX="10" minY="230" width="100" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="1"/>
+                                <connections>
+                                    <action selector="tap1Button:" destination="yfm-pH-SMW" eventType="touchUpInside" id="Cxs-AW-NhD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7lR-qD-dCq">
+                                <frame key="frameInset" minX="110" minY="230" width="100" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="2"/>
+                                <connections>
+                                    <action selector="tap2Button:" destination="yfm-pH-SMW" eventType="touchUpInside" id="nOH-Rb-UGm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L7g-PI-BYi">
+                                <frame key="frameInset" minX="210" minY="230" width="100" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="3"/>
+                                <connections>
+                                    <action selector="tap3Button:" destination="yfm-pH-SMW" eventType="touchUpInside" id="W3I-8c-BKA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mmX-mh-hZv">
+                                <frame key="frameInset" minX="10" minY="290" width="100" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="0"/>
+                                <connections>
+                                    <action selector="tap0Button:" destination="yfm-pH-SMW" eventType="touchUpInside" id="SZf-0e-Tb2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5zt-12-tPC">
+                                <frame key="frameInset" minX="110" minY="290" width="100" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="00"/>
+                                <connections>
+                                    <action selector="tap00Button:" destination="yfm-pH-SMW" eventType="touchUpInside" id="iaE-UU-p2t"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqh-lX-a4n">
+                                <frame key="frameInset" minX="210" minY="290" width="100" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="C"/>
+                                <connections>
+                                    <action selector="tapClearButton:" destination="yfm-pH-SMW" eventType="touchUpInside" id="Ug1-GW-XF7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqz-K6-FAE">
+                                <frame key="frameInset" minX="82" minY="399" width="162" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="貯金"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" id="Wru-XS-Pbl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O39-wU-dqa">
+                                <frame key="frameInset" minX="10" minY="110" width="100" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="7"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kXD-XJ-qHR">
+                                <frame key="frameInset" minX="10" minY="110" width="100" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="7"/>
+                                <connections>
+                                    <action selector="tap7Button:" destination="yfm-pH-SMW" eventType="touchUpInside" id="VmZ-8q-NU0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="priceField" destination="U9a-IK-TVm" id="OOG-Xj-e1j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oS1-O3-R2i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1483" y="383"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Wru-XS-Pbl"/>
+    </inferredMetricsTieBreakers>
 </document>
