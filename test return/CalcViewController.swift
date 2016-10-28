@@ -112,6 +112,8 @@ class CalcViewController: UIViewController {
         let viewController: ManagementController = segue.destination as! ManagementController
         if let kin = Int(priceField.text!){
             price.minute = price.minute + kin
+           let userdefaults = UserDefaults.standard
+            userdefaults.set(price.minute, forKey: "minute")
            viewController.price = price
         }
     }

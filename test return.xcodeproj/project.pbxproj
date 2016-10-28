@@ -13,6 +13,7 @@
 		C32321EB1D7162F400DD6C67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32321EA1D7162F400DD6C67 /* AppDelegate.swift */; };
 		C32321F21D7162F400DD6C67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C32321F11D7162F400DD6C67 /* Assets.xcassets */; };
 		C32321F51D7162F400DD6C67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C32321F31D7162F400DD6C67 /* LaunchScreen.storyboard */; };
+		C349FB351DC38F5400743229 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C349FB341DC38F5400743229 /* TitleViewController.swift */; };
 		C3B8E71C1D717E6C00EF9A3D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32321EC1D7162F400DD6C67 /* ViewController.swift */; };
 		C3B8E71D1D71840F00EF9A3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C32321EE1D7162F400DD6C67 /* Main.storyboard */; };
 		C3CB2FDF1DC0CD43000A67E9 /* SetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CB2FDE1DC0CD43000A67E9 /* SetController.swift */; };
@@ -31,6 +32,7 @@
 		C32321F11D7162F400DD6C67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C32321F41D7162F400DD6C67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C32321F61D7162F400DD6C67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C349FB341DC38F5400743229 /* TitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
 		C3CB2FDE1DC0CD43000A67E9 /* SetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetController.swift; sourceTree = "<group>"; };
 		C3FBBEFC1DC0DAFA0023559B /* ManagementController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagementController.swift; sourceTree = "<group>"; };
 		CD501A6A3F9130750BDF6FDA /* Pods_test_return.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_test_return.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +94,7 @@
 				C3FBBEFC1DC0DAFA0023559B /* ManagementController.swift */,
 				C31F0BED1DC365A400C7C173 /* CalcViewController.swift */,
 				C32321EE1D7162F400DD6C67 /* Main.storyboard */,
+				C349FB341DC38F5400743229 /* TitleViewController.swift */,
 				C3CB2FDE1DC0CD43000A67E9 /* SetController.swift */,
 				C32321F11D7162F400DD6C67 /* Assets.xcassets */,
 				C32321F31D7162F400DD6C67 /* LaunchScreen.storyboard */,
@@ -227,6 +230,7 @@
 				C3CB2FDF1DC0CD43000A67E9 /* SetController.swift in Sources */,
 				C3B8E71C1D717E6C00EF9A3D /* ViewController.swift in Sources */,
 				C31F0BEE1DC365A400C7C173 /* CalcViewController.swift in Sources */,
+				C349FB351DC38F5400743229 /* TitleViewController.swift in Sources */,
 				C31F0BF01DC375EB00C7C173 /* Saving.swift in Sources */,
 				C3FBBEFD1DC0DAFA0023559B /* ManagementController.swift in Sources */,
 				C32321EB1D7162F400DD6C67 /* AppDelegate.swift in Sources */,

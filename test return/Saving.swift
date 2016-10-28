@@ -7,9 +7,8 @@
 //
 
 import Foundation
-class Saving {
+class Saving  {
     var money: Int?
-    var plus : Int?
     var minute : Int = 0
     
     init(kane : Int){

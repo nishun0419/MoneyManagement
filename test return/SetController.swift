@@ -119,7 +119,10 @@ class SetController: UIViewController {
     override func prepare(for segue:UIStoryboardSegue,sender: Any?){
             let viewController: ManagementController = segue.destination as! ManagementController
         if let kin = Int(priceField.text!){
-            var price = Saving(kane: kin)
+           var price = Saving(kane: kin)
+            let userDefaults = UserDefaults.standard
+            userDefaults.set(kin, forKey: "money")
+            userDefaults.set(price.minute, forKey: "minute")
             viewController.price = price
         }
     }
